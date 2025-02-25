@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 p-6">
-    <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
+    <div class="mx-auto bg-white shadow-md rounded-lg p-6">
         <h2 class="text-2xl font-bold mb-4">Daftar Pegawai</h2>
 
         @if(session('success'))
@@ -37,7 +37,7 @@
                     <td class="border p-2">{{ $pegawai->tanggal_lahir }}</td>
                     <td class="border p-2">{{ $pegawai->tempat_lahir }}</td>
                     <td class="border p-2">{{ $pegawai->jabatan }}</td>
-                    <td class="border p-2">
+                    <td class="border p-2 flex flex-col gap-2">
                         <a href="/pegawai/{{ $pegawai->id }}/edit" class="bg-yellow-500 text-white px-3 py-1 rounded">Edit</a>
                         <form action="/pegawai/{{ $pegawai->id }}" method="POST" class="inline">
                             @csrf

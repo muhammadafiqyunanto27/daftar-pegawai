@@ -30,7 +30,7 @@ class PegawaiController extends Controller
         ]);
 
         Pegawai::create($request->all());
-        return redirect('/')->with('success', 'Pegawai berhasil ditambahkan');
+        return redirect('/pegawai')->with('success', 'Pegawai berhasil ditambahkan');
     }
 
     public function edit($id)
@@ -52,12 +52,12 @@ class PegawaiController extends Controller
 
         $pegawai = Pegawai::findOrFail($id);
         $pegawai->update($request->all());
-        return redirect('/')->with('success', 'Pegawai berhasil diperbarui');
+        return redirect('/pegawai')->with('success', 'Pegawai berhasil diperbarui');
     }
 
     public function destroy($id)
     {
         Pegawai::destroy($id);
-        return redirect('/')->with('success', 'Pegawai berhasil dihapus');
+        return redirect('/pegawai')->with('success', 'Pegawai berhasil dihapus');
     }
 }
